@@ -2,26 +2,22 @@ import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 
 const Home = () => {
-    const [blogs, setBlogs] = useState(null); // initial data is null
-
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
-    }
+    const [blogs, setBlogs] = useState(null); // initial data is null so conditional evaluator is needed below
 
     useEffect(() => {
         fetch('http://localhost:8000/blogs')
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setBlogs(data) // this wont cause an infinite loop b/c it only runs at the start
+            });
     }, []);
 
     return ( 
         <div className="home">
-           {/* <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/> */}
+            {/* added conditional evaluator below */}
+           {blogs && <BlogList blogs={blogs} title="All Blogs!" />}
         </div>
      );
 }
