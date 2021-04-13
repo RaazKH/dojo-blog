@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Commands
+To open the database run:
+###npx json-server --watch data/db.json --port 
+
+To start the application:
+###npm run start
+
 ## Available Scripts
 
 In the project directory, you can run:
