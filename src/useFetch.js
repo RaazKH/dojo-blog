@@ -6,7 +6,7 @@ const useFetch = (url) => { // must start hook name with "use"
     const [error, setError] = useState(null);
     
     useEffect(() => {
-        // setTimeout(() => {
+        setTimeout(() => {
             fetch(url)
                 .then(res => {
                     if(!res.ok) { // throw error for catch below
@@ -24,7 +24,7 @@ const useFetch = (url) => { // must start hook name with "use"
                     setIsPending(false);
                     console.log(err.message);
                 })
-        // }, 1000);
+        }, 1000);
     }, [url]);
 
     return { data, isPending, error }
