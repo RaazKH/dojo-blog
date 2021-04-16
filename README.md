@@ -4,10 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Commands
 To open the database run:
-###npx json-server --watch data/db.json --port 8000
+### npx json-server --watch data/db.json --port 8000
 
 To start the application:
-###npm run start
+### npm run start
+
+To download routing:
+### npm install react-router-dom@5
 
 ## Available Scripts
 
